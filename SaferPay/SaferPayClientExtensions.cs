@@ -17,5 +17,8 @@ namespace SaferPay {
 
 		public static Task<RefundResponse> RefundAsync( this ISaferPayClient client, RefundRequest request )
 			=> client.SendAsync<RefundResponse, RefundRequest>( SaferPayEndpointConstants.TransactionEndpoint + "/Refund", request );
-	}
+
+        public static Task<PaymentPageInitializeResponse> PaymentPageInitializeAsync(this ISaferPayClient client, PaymentPageInitializeRequest request)
+            => client.SendAsync<PaymentPageInitializeResponse, PaymentPageInitializeRequest>(SaferPayEndpointConstants.TransactionEndpoint + "/Initialize", request);
+    }
 }
