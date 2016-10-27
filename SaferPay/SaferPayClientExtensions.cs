@@ -20,5 +20,8 @@ namespace SaferPay {
 
         public static Task<PaymentPageInitializeResponse> PaymentPageInitializeAsync(this ISaferPayClient client, PaymentPageInitializeRequest request)
             => client.SendAsync<PaymentPageInitializeResponse, PaymentPageInitializeRequest>(SaferPayEndpointConstants.TransactionEndpoint + "/Initialize", request);
+
+        public static Task<PaymentPageAssertResponse> PaymentPageAssertAsync(this ISaferPayClient client, PaymentPageAssertRequest request)
+            => client.SendAsync<PaymentPageAssertResponse, PaymentPageAssertRequest>(SaferPayEndpointConstants.PaymentPageEndpoint + "/Assert", request);
     }
 }

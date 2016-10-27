@@ -5,10 +5,8 @@ using System.Threading.Tasks;
 
 namespace SaferPay.Models
 {
-    public class PaymentPageInitializeResponse : ResponseBase
+    public class PaymentPageAssertRequest : RequestBase
     {
         public string Token { get; set; }
-        public DateTime Expiration { get; set; }
-        public Redirect Redirect { get; set; }
     }
 }
