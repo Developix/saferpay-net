@@ -2,9 +2,11 @@
 using System.Net;
 using SaferPay.Models;
 
-namespace SaferPay {
-	public class SaferPayException : Exception {
-		public SaferPayException( HttpStatusCode httpStatusCode, ErrorResponse errorResponse ) : base( $"{httpStatusCode}: {errorResponse.ErrorName}: {errorResponse.ErrorMessage}: {string.Join( ", ", errorResponse.ErrorDetail ?? Array.Empty<string>() )}" )
+namespace SaferPay
+{
+	public class SaferPayException : Exception
+	{
+		public SaferPayException(HttpStatusCode httpStatusCode, ErrorResponse errorResponse) : base($"{httpStatusCode}: {errorResponse.ErrorName}: {errorResponse.ErrorMessage}: {string.Join(", ", errorResponse.ErrorDetail ?? Array.Empty<string>())}")
 		{
 			HttpStatusCode = httpStatusCode;
 			ErrorResponse = errorResponse;
