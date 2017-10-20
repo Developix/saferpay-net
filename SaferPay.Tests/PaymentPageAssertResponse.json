@@ -1,0 +1,48 @@
+{
+    "transaction": {
+        "type": "PAYMENT",
+        "status": "AUTHORIZED",
+        "id": "QpAW2OA4M7v2SA3zxGp8bxpvCE2A",
+        "date": "2017-05-06T20:06:55.133+02:00",
+					"amount": {
+						"value": "2250",
+						"currencyCode": "CHF"
+					},
+        "orderId": "eb75fe06-dfa8-4471-9ae7-795a17b79530",
+        "acquireName": null,
+        "acquirerReference": "000000",
+        "directDebit": null
+    },
+    "paymentMeans": {
+        "card": {
+            "number": null,
+            "expYear": 2018,
+            "expMonth": 1,
+            "holderName": "Max Muster",
+            "verificationCode": null
+        },
+        "bankAccount": null,
+        "alias": null,
+        "wallet": null,
+        "invocie": null
+    },
+    "registrationResult": null,
+    "payer": {
+        "languageCode": null,
+        "ipAddress": "192.168.1.1",
+        "ipLocation": "CH",
+        "deliveryAddress": null,
+        "billingAddress": null
+    },
+    "threeDs": {
+        "authenticated": true,
+        "liabilityShift": true,
+        "xid": "eFMiAQJnElMuBCQXYlYNDxM+bgM=",
+        "verificationValue": "AAABBIIFmAAAAAAAAAAAAAAAAAA="
+    },
+    "dcc": null,
+    "responseHeader": {
+        "specVersion": "1.6",
+        "requestId": "6a6c1c76e5b445b5b8c02b4cce9e4bb7"
+    }
+}
