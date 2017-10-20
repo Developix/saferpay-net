@@ -7,8 +7,17 @@ namespace SaferPay.Models
 {
     public class Invoice
     {
-        public BankAccount Payee { get; set; }
-        public string ReasonForTransfer { get; set; }
-        public DateTime DueDate { get; set; }
+		/// <summary>
+		/// Information about the payee, eg billpay, who is responsible for collecting the bill
+		/// </summary>
+		public BankAccount Payee { get; set; }
+		/// <summary>
+		/// The reason for transfer to be stated when paying the invoice (transfer of funds)
+		/// </summary>
+		public string ReasonForTransfer { get; set; }
+		/// <summary>
+		/// The date by which the invoice needs to be settled
+		/// </summary>
+		public DateTime DueDate { get; set; }
     }
 }

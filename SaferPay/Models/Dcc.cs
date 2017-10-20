@@ -2,6 +2,9 @@ namespace SaferPay.Models
 {
 	public class Dcc
 	{
-		public Amount PaymentAmount { get; set; }
+		/// <summary>
+		/// Amount in payer’s currency
+		/// </summary>
+		public Amount PayerAmount { get; set; }
 	}
 }

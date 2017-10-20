@@ -8,15 +8,21 @@ using Xunit.Abstractions;
 
 namespace SaferPay.Real.Tests {
 	public class IntegrationTests {
+		private readonly ITestOutputHelper _output;
+
+		public IntegrationTests(ITestOutputHelper output)
+		{
+			_output = output;
+		}
 
 		[Fact]
-		public async Task FullTest1CHF( ITestOutputHelper output )
+		public async Task FullTest1CHF()
 		{
 			var settings = TestSettings.LoadSettings();
 			var card = TestSettings.LoadCreditCard();
 
 			using( var client = new SaferPayClient( new HttpClient(), settings ) ) {
-				output.WriteLine( "Initialize" );
+				_output.WriteLine( "Initialize" );
 				var initializeResponse = await client.InitializeAsync( new InitializeRequest {
 					TerminalId = settings.TerminalId,
 					Payment = new InitializationPayment {
@@ -44,7 +50,7 @@ namespace SaferPay.Real.Tests {
 
 
 
-				output.WriteLine( "Authorize" );
+				_output.WriteLine( "Authorize" );
 				var authorizeResponse = await client.AuthorizeAsync( new AuthorizeRequest {
 					Token = initializeResponse.Token
 				} );
@@ -55,7 +61,7 @@ namespace SaferPay.Real.Tests {
 
 
 
-				output.WriteLine( "Capture" );
+				_output.WriteLine( "Capture" );
 				var captureResponse = await client.CaptureAsync( new CaptureRequest {
 					TransactionReference = new TransactionReference {
 						TransactionId = authorizeResponse.Transaction.Id
@@ -74,7 +80,7 @@ namespace SaferPay.Real.Tests {
 
 
 
-				output.WriteLine( "Refund" );
+				_output.WriteLine( "Refund" );
 				var refundResponse = await client.RefundAsync( new RefundRequest {
 					Refund = new Refund {
 						Amount = new Amount {

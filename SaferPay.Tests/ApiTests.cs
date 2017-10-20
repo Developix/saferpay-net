@@ -2,14 +2,23 @@
 using System.Net.Http;
 using System.Threading.Tasks;
 using SaferPay.Models;
+using SaferPay.Models.PaymentPage;
 using SaferPay.Tests.Shared;
 using Xunit;
+using Newtonsoft.Json;
 
 namespace SaferPay.Tests {
 	public class ApiTests {
 		private static SaferPayClient CreateTestClient()
 			=> new SaferPayClient( new HttpClient(), TestSettings.LoadTestSettings() );
 
+		[Fact]
+		public void Can_Deserialize_PaymentPageAssertResponse()
+		{
+			var json = System.IO.File.ReadAllText(@"PaymentPageAssertResponse.json");
+			var response = JsonConvert.DeserializeObject<PaymentPageAssertResponse>(json, JsonSettings.Default);
+
+		}
 
 
 		[Fact]

@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Serialization;
 
 namespace SaferPay
@@ -9,7 +10,7 @@ namespace SaferPay
 
 		public static JsonSerializerSettings CreateDefaultSettings()
 		{
-			return new JsonSerializerSettings
+			var settings = new JsonSerializerSettings
 			{
 				ContractResolver = new DefaultContractResolver
 				{
@@ -17,6 +18,10 @@ namespace SaferPay
 					NamingStrategy = new DefaultNamingStrategy()
 				}
 			};
+
+			settings.Converters.Add(new StrongTypedStringConverter());
+
+			return settings;
 		}
 	}
 }

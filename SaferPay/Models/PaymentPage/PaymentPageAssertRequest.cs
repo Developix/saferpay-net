@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace SaferPay.Models
+namespace SaferPay.Models.PaymentPage
 {
     public class PaymentPageAssertRequest : RequestBase
     {

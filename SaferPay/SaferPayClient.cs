@@ -23,8 +23,7 @@ namespace SaferPay
 		protected readonly SaferPaySettings _settings;
 		private readonly JsonSerializerSettings _jsonSerializerSettings;
 
-		public SaferPayClient(HttpClient httpClient, SaferPaySettings settings) : this(httpClient, settings, JsonSettings.Default)
-		{ }
+		public SaferPayClient(HttpClient httpClient, SaferPaySettings settings) : this(httpClient, settings, JsonSettings.Default) { }
 
 		public SaferPayClient(HttpClient httpClient, SaferPaySettings settings, JsonSerializerSettings jsonSerializerSettings)
 		{

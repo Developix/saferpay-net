@@ -1,5 +1,6 @@
 ﻿using System.Threading.Tasks;
 using SaferPay.Models;
+using SaferPay.Models.PaymentPage;
 
 namespace SaferPay
 {
