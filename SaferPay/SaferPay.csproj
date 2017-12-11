@@ -5,18 +5,18 @@
 		<Copyright>Bombsquad Inc 2016</Copyright>
 		<AssemblyTitle>Saferpay JSON API</AssemblyTitle>
 		<VersionPrefix>0.2.0</VersionPrefix>
-		<Authors>bmbsqd;durango</Authors>
+		<Authors>bmbsqd;durango;styfi;wagich</Authors>
 		<TargetFramework>netstandard2.0</TargetFramework>
 		<DebugType>portable</DebugType>
 		<AssemblyName>saferpay-net</AssemblyName>
 		<PackageId>SaferPay</PackageId>
 		<PackageTags>saferpay;async;rest;json;api</PackageTags>
 		<PackageReleaseNotes></PackageReleaseNotes>
-		<PackageIconUrl>http://www.gravatar.com/avatar/778137d42770f739df317b3cde5454ed.png?s=128</PackageIconUrl>
-		<PackageProjectUrl>https://github.com/bmbsqd/saferpay-net/</PackageProjectUrl>
+		<PackageIconUrl></PackageIconUrl>
+		<PackageProjectUrl>https://github.com/wagich/saferpay-net</PackageProjectUrl>
 		<PackageLicenseUrl>http://creativecommons.org/licenses/by-sa/3.0/</PackageLicenseUrl>
 		<RepositoryType>git</RepositoryType>
-		<RepositoryUrl>https://github.com/bmbsqd/saferpay-net/</RepositoryUrl>
+		<RepositoryUrl>https://github.com/wagich/saferpay-net</RepositoryUrl>
 		<AssetTargetFallback>$(AssetTargetFallback);portable-net45+win8+wp8+wpa81;</AssetTargetFallback>
 		<GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
 		<GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
@@ -27,7 +27,7 @@
 		<GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
 		<GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-		<Version>0.4.0</Version>
+		<Version>0.4.1</Version>
 	</PropertyGroup>
 
 	<ItemGroup>
