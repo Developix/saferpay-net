@@ -9,8 +9,12 @@ using Newtonsoft.Json;
 
 namespace SaferPay.Tests {
 	public class ApiTests {
+
+
+		private static SaferPaySettings testSettings = TestSettings.LoadTestSettings();
+
 		private static SaferPayClient CreateTestClient()
-			=> new SaferPayClient( new HttpClient(), TestSettings.LoadTestSettings() );
+			=> new SaferPayClient( new HttpClient(), testSettings);
 
 		[Fact]
 		public void Can_Deserialize_PaymentPageAssertResponse()
@@ -27,7 +31,7 @@ namespace SaferPay.Tests {
 			var client = CreateTestClient();
 
 			var response = await client.InitializeAsync( new InitializeRequest {
-				TerminalId = "17812438",
+				TerminalId = testSettings.TerminalId,
 				Payment = new InitializationPayment {
 					Amount = new Amount {
 						CurrencyCode = "EUR",
@@ -58,7 +62,7 @@ namespace SaferPay.Tests {
 		private Task<InitializeResponse> CreateInitialization( ISaferPayClient client )
 		{
 			return client.InitializeAsync( new InitializeRequest {
-				TerminalId = "17812438",
+				TerminalId = testSettings.TerminalId,
 				Payment = new InitializationPayment {
 					Amount = new Amount {
 						CurrencyCode = "EUR",
